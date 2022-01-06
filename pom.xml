@@ -20,6 +20,8 @@
         <logback.version>1.2.6</logback.version>
         <slf4j.version>1.7.32</slf4j.version>
 
+        <!--DB-->
+        <postgresql.version>42.3.0</postgresql.version>
         <!--    Tests  -->
         <junit.version>4.13.2</junit.version>
     </properties>
@@ -70,6 +72,18 @@
             <artifactId>spring-context</artifactId>
             <version>5.3.13</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>5.3.13</version>
+        </dependency>
+
+        <!--DataBase-->
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>${postgresql.version}</version>
+        </dependency>
 
         <!--Web-->
         <dependency>
@@ -85,6 +99,13 @@
             <version>1.2</version>
         </dependency>
 
+        <!--DataBase-->
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.3.0</version>
+        </dependency>
+
         <!--Test-->
         <dependency>
             <groupId>junit</groupId>
@@ -95,7 +116,7 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>
-            <version>${spring.version}</version>
+            <version>5.3.13</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
