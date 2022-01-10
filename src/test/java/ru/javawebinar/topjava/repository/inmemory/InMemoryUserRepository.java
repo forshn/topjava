@@ -9,7 +9,6 @@ import ru.javawebinar.topjava.repository.inmemory.InMemoryBaseRepository;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
-import java.util.stream.Collectors;
 
 import static ru.javawebinar.topjava.UserTestData.admin;
 import static ru.javawebinar.topjava.UserTestData.user;
@@ -29,7 +28,7 @@ public class InMemoryUserRepository extends InMemoryBaseRepository<User> impleme
     public List<User> getAll() {
         return getCollection().stream()
                 .sorted(Comparator.comparing(User::getName).thenComparing(User::getEmail))
-                .collect(Collectors.toList());
+                .toList();
     }
 
     @Override
