@@ -13,7 +13,9 @@ import ru.javawebinar.topjava.model.Meal;
 import ru.javawebinar.topjava.repository.MealRepository;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Stream;
 
 @Repository
 public class JdbcMealRepository implements MealRepository {
@@ -25,6 +27,7 @@ public class JdbcMealRepository implements MealRepository {
     private final NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 
     private final SimpleJdbcInsert insertMeal;
+
 
     @Autowired
     public JdbcMealRepository(JdbcTemplate jdbcTemplate, NamedParameterJdbcTemplate namedParameterJdbcTemplate) {
@@ -83,4 +86,5 @@ public class JdbcMealRepository implements MealRepository {
                 "SELECT * FROM meals WHERE user_id=?  AND date_time >=  ? AND date_time < ? ORDER BY date_time DESC",
                 ROW_MAPPER, userId, startDateTime, endDateTime);
     }
+
 }
