@@ -13,8 +13,8 @@ public class DataJpaUserRepository implements UserRepository {
 
     private final CrudUserRepository crudRepository;
 
-    public DataJpaUserRepository(CrudUserRepository crudRepository) {
-        this.crudRepository = crudRepository;
+    public DataJpaUserRepository(CrudUserRepository crudUserRepository) {
+        this.crudRepository = crudUserRepository;
     }
 
     @Override
